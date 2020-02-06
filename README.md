@@ -26,6 +26,9 @@ You'll need:
 * Patience (seriously)
 * The freshly bought PC 
 
+## Installation
+Here we go!
+
 
 
 
