@@ -95,31 +95,31 @@ Reboot the computer, once the screen is black (but not off) remove the bootable 
 ** On this PC we noticed that the installation of Ubuntu had some unexpected results, the wifi chip, the bluetooth chip are not working at first, we suggest you use an ethernet cable but we will solve this problem right away
 
 1. Problem with the chips
-..* Check the state of the wifi chip:
-..* `sudo lshw -C network`
-..* `rfkill list`
+  * Check the state of the wifi chip:
+  * `sudo lshw -C network`
+  * `rfkill list`
 If there are 2 wifi chips it means that this is the issue
-..* `sudo tee /etc/modprobe.d/ideapad.conf <<< "blacklist ideapad_laptop"`
-..* Reboot
+  * `sudo tee /etc/modprobe.d/ideapad.conf <<< "blacklist ideapad_laptop"`
+  * Reboot
 
 
 2. Update Ubuntu 18.04 (a window should suggest you to update once you are connected to the web)
 
 3. Install some dependancies:
-..* `sudo apt get update`
-..* `sudo apt get upgrade`
-..* `sudo apt-get --assume-yes install tmux build-essential gcc g++ make binutils software-properties-common git`
+  * `sudo apt get update`
+  * `sudo apt get upgrade`
+  * `sudo apt-get --assume-yes install tmux build-essential gcc g++ make binutils software-properties-common git`
 
 #### Install CUDA 10
 1. Check compatibility of the graphic card: `lspci | grep -i nvidia`
 2. Some informations about the GPU should be displayed otherwise g[o here to solve the issue](https://docs.nvidia.com/cuda/archive/10.0/)
 3. Install some dependancies, python3.7, pip3.7:
-..* `sudo apt-get install build-essential cmake unzip zip`
-..* `sudo add-apt-repository ppa:deadsnakes/ppa`
-..* `sudo apt-get update`
-..* `sudo apt-get install python3.7 python3.7-dev pylint`
-..* `sudo python3.7 get-pip.py`
-..* `sudo pip3.7 install testresources numpy matplotlib`
+  * `sudo apt-get install build-essential cmake unzip zip`
+  * `sudo add-apt-repository ppa:deadsnakes/ppa`
+  * `sudo apt-get update`
+  * `sudo apt-get install python3.7 python3.7-dev pylint`
+  * `sudo python3.7 get-pip.py`
+  * `sudo pip3.7 install testresources numpy matplotlib`
 4. Download CUDA 10.0 at [this link](https://developer.nvidia.com/cuda-10.0-download-archive) (Linux-x86_64  -> Ubuntu-18.04  -> deb (local))
 
 
