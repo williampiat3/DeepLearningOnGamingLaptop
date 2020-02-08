@@ -144,7 +144,8 @@ Then you need to add some PATH variables:
   * In your .bashrc add these lines: 
   * `export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}`
   * `export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64/${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}`
-  * save, exit and reboot
+
+save, exit and reboot
 
 #### Install cuDNN 7.6
 1. Register at https://developer.nvidia.com/cudnn
@@ -161,11 +162,13 @@ Then you need to add some PATH variables:
   * `cd  $HOME/cudnn_samples_v7/mnistCUDNN`
   * `make clean && make`
   * `./mnistCUDNN`
-  * If the message "Test passed" is displayed then everything is ok
+
+If the message "Test passed" is displayed then everything is ok
 
 ### Install tensorflow
 In a terminal:
 * `sudo pip3.7 install tensorflow-gpu==2.0.0`
+
 You can check the installation by running this script:
 ```python
 import tensorflow as tf
@@ -191,6 +194,7 @@ model.evaluate(x_test, y_test)
 
 ### Install Pytorch
 * `sudo pip3.7 install https://download.pytorch.org/whl/cu100/torch-1.4.0%2Bcu100-cp37-cp37m-linux_x86_64.whl torchvision`
+
 You can check the installation:
 ```python
 import torch
