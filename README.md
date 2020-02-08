@@ -1,15 +1,15 @@
 # Deep Learning On A Gaming Laptop
-This folder presents the installation that we made on a Lenovo Legion Y920 with i7 and a GPU NVIDIA GeForce 1070 in my former company, for a better agility we managed for our work in Applied Deep learning. This would give the possibility to anyone to build their own installation so that they can practice freely.
-Although this guide is well written and ends up in a perfectly working setup, you will need some linux skills in order to fix the issues that will be coming after this installation (if you update the cuda drivers or other things that might eventually arrive).
+This folder presents the installation that we made on a Lenovo Legion Y920 with i7 and a GPU NVIDIA GeForce 1070 in my former company. Having laptops was for a better agility for our work in Applied Deep learning. This  guide would give the possibility to anyone to build their own installation so that they can practice freely.
+Although this guide is straight forward and ends up in a perfectly working setup, you will need some linux skills in order to fix the issues that will be coming after this installation (if you update the cuda drivers or other things that might eventually happen).
 
 This installation was made on a specific model of computer and you might have issues transfering it to another, but it gives a lot of solution to a wide range of problems we encountered. I believe it is a rather complete guide.
 
 ## Installation version
 By following this guide you'll install this environement:
 
-On a Lenovo Legion Y920 - Core i7-7820HK - 16 Go - SSD 256 Go + HDD 1 To - Screen 17.3" LED Full HD - NVIDIA GeForce GTX 1070 8 Go you'll have:
+On a [Lenovo Legion Y920 - Core i7-7820HK - 16 Go - SSD 256 Go + HDD 1 To - Screen 17.3" LED Full HD - NVIDIA GeForce GTX 1070 8 Go](https://www.lenovo.com/fr/fr/laptops/legion-laptops/legion-y-series/Legion-Y920/p/88GMY900877) you'll have:
 
-* A dual boat Ubuntu 18.04 LTS/ Windows 10
+* A dual boot Ubuntu 18.04 LTS/ Windows 10
 * Cuda 10.0
 * Cudnn
 * Python 3.7
@@ -17,7 +17,7 @@ On a Lenovo Legion Y920 - Core i7-7820HK - 16 Go - SSD 256 Go + HDD 1 To - Scree
 * Pytorch 1.4  for cuda 10.0
 
 
-Along with other libraries that are quite handy for manipulating data and visulizations
+Along with other libraries that are quite handy for manipulating data and visualizations
 
 ## Material requirements
 You'll need:
@@ -111,9 +111,9 @@ If there are 2 wifi chips it means that this is the issue
   * `sudo apt-get --assume-yes install tmux build-essential gcc g++ make binutils software-properties-common git`
 
 ### Installing CUDA cuDNN
-#### Install CUDA 10
+#### Install CUDA 10.0
 1. Check compatibility of the graphic card: `lspci | grep -i nvidia`
-2. Some informations about the GPU should be displayed otherwise g[o here to solve the issue](https://docs.nvidia.com/cuda/archive/10.0/)
+2. Some informations about the GPU should be displayed otherwise [go here to solve the issue](https://docs.nvidia.com/cuda/archive/10.0/)
 3. Install some dependancies, python3.7, pip3.7:
   * `sudo apt-get install build-essential cmake unzip zip dkms freeglut3 freeglut3-dev libxi-dev libxmu-dev`
   * `sudo add-apt-repository ppa:deadsnakes/ppa`
