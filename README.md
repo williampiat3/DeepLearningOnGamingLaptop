@@ -11,9 +11,9 @@ On a [Lenovo Legion Y920 - Core i7-7820HK - 16 Go - SSD 256 Go + HDD 1 To - Scre
 
 * A dual boot Ubuntu 18.04 LTS/ Windows 10
 * Cuda 10.0
-* Cudnn
+* Cudnn 7.6
 * Python 3.7
-* Tensorflow-gpu > 2.0
+* Tensorflow-gpu  2.0.0
 * Pytorch 1.4  for cuda 10.0
 
 
@@ -92,7 +92,7 @@ Reboot the computer, once the screen is black (but not off) remove the bootable 
 
 #### Configuring Ubuntu
 
-** On this PC we noticed that the installation of Ubuntu had some unexpected results, the wifi chip, the bluetooth chip are not working at first, we suggest you use an ethernet cable but we will solve this problem right away
+**On this PC we noticed that the installation of Ubuntu had some unexpected results, the wifi chip, the bluetooth chip are not working at first, we suggest you use an ethernet cable but we will solve this problem right away**
 
 1. Problem with the chips
   * Check the state of the wifi chip:
@@ -123,14 +123,14 @@ If there are 2 wifi chips it means that this is the issue
   * `sudo pip3.7 install testresources numpy matplotlib`
 4. Download CUDA 10.0 at [this link](https://developer.nvidia.com/cuda-10.0-download-archive) (Linux-x86_64  -> Ubuntu-18.04  -> deb (local))
 5. Install CUDA 10.0:
-The installation of cuda need to be done after installing the right drivers for the computer otherwise the computer will freeze and there won't be any easy to get back from this. We found the solution [here](https://medium.com/@zhanwenchen/install-cuda-10-1-and-cudnn-7-5-0-for-pytorch-on-ubuntu-18-04-lts-9b6124c44cc), to sum it up:
+The installation of cuda needs to be done after installing the right drivers for the computer otherwise the computer will freeze and there won't be any easy way to get back from this. We found the solution [here](https://medium.com/@zhanwenchen/install-cuda-10-1-and-cudnn-7-5-0-for-pytorch-on-ubuntu-18-04-lts-9b6124c44cc), to sum it up:
   * `sudo add-apt-repository ppa:graphics-drivers/ppa`
   * `sudo apt-get update`
   * `sudo apt-get install nvidia-driver-410`
   * Reboot the PC
 
 Then in a terminal:
-  * nvidia-smi
+  * `nvidia-smi`
 Some informations about the drivers should be displayed
 
 To finish the installation of CUDA open a terminal in the folder where you downloaded CUDA 10 at step 4
@@ -207,19 +207,12 @@ print(torch.cuda.is_available())
 * `sudo pip3.7 install scikit-learn networkX jupyter pandas scipy h5py seaborn`
 
 
+### Install a monitoring software
+To be able to monitor the load of the GPU and CPU we found glances to be quite handy, to install it:
+* `sudo pip3.7 install nvidia-ml-py3`
+* `sudo pip3.7 install glances`
 
+You can now start glances by simply typing `glances` in the terminal
 
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
+## Conclusion
+This guide gives a good overview of all that is necessary to build a deep learning setting from a freshly bought PC, sadly it is not general it had been tested on 2 different PCs that came from the Lenovo Legion collection.
